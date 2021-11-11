@@ -66,8 +66,11 @@ function setup() {
      }
      // The results are in an array ordered by confidence.
      // console.log(results[0]);
-     if(results[0].confidence>0.85){
+     if(results[0].confidence>0.90){
      label = results[0].label;
+     
+     console.log(label);
+    
      }
      else{
      label = "...";
@@ -75,4 +78,21 @@ function setup() {
      flippedVideo.remove();
      // Classifiy again!
      classifyVideo();
+ }
+
+ var v_id = document.getElementById("vide");
+ function add_url(n) {
+   if (n == "Astronomy") {
+     v_id.setAttribute("src", "Astrology.ogg");
+   } else if (n == "Biology") {
+     v_id.setAttribute("src", "Astrology.ogg");
+   } else if (n == "Biology") {
+     v_id.setAttribute("src", "Astrology.ogg");
+   } else if (n == "Biology") {
+     v_id.setAttribute("src", "Astrology.ogg");
+   } else if (n == "Biology") {
+     v_id.setAttribute("src", "Astrology.ogg");
+   }else{
+     v_id.setAttribute("src", "#");
+   }
  }
