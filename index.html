@@ -6,7 +6,7 @@
 
     <!-- PLEASE NO CHANGES BELOW THIS LINE (UNTIL I SAY SO) -->
   <script language="javascript" type="text/javascript" src="libraries/p5.min.js"></script>
-  <script language="javascript" type="text/javascript" src="app.js"></script>
+  <!-- <script language="javascript" type="text/javascript" src="app.js"></script> -->
   <!-- OK, YOU CAN MAKE CHANGES BELOW THIS LINE AGAIN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
     <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
@@ -19,6 +19,85 @@
         }
 
     </style>
+    <script> // Classifier Variable
+ let classifier;
+ // Model URL
+ let imageModelURL =
+   "https://teachablemachine.withgoogle.com/models/lIvux57Wc/";
+
+
+ // Video
+ let video;
+ let flippedVideo;
+ // To store the classificationpip install streamlit
+ let label = "";
+let img;
+ // Load the model first
+ function preload() {
+     classifier = ml5.imageClassifier(imageModelURL + 'model.json');
+     img = loadImage('data/logo.png');
+ }
+
+function setup() {
+     createCanvas(400, 660);
+     // Create the video
+     //video = createCapture(VIDEO);
+     
+
+     var constraints = {
+         audio: false,
+         video: {
+             facingMode: "environment"
+         }
+     };
+     video = createCapture(constraints);
+     video.size(400, 660);
+     video.hide();
+
+     flippedVideo = ml5.flipImage(video)
+     // Start classifying
+     classifyVideo();
+ }
+
+ function draw() {
+     background(0);
+     // Draw the video
+     image(video, 0, 0);
+
+     // Draw the label
+     fill(255);
+     textSize(30);
+     textAlign(CENTER);
+     text(label, width / 2, height - 60);
+     image(img, 10, height-100, 100, 52);
+ }
+
+ // Get a prediction for the current video frame
+ function classifyVideo() {
+     flippedVideo = ml5.flipImage(video)
+     classifier.classify(flippedVideo, gotResult);
+ }
+
+ // When we get a result
+ function gotResult(error, results) {
+     // If there is an error
+     if (error) {
+         console.error(error);
+         return;
+     }
+     // The results are in an array ordered by confidence.
+     // console.log(results[0]);
+     if(results[0].confidence>0.85){
+     label = results[0].label;
+     }
+     else{
+     label = "...";
+     }
+     flippedVideo.remove();
+     // Classifiy again!
+     classifyVideo();
+ }
+ </script>
 </head>
 
 <body>
