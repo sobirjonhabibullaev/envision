@@ -96,6 +96,6 @@ function gotResult(error, results) {
   flippedVideo.remove();
   // Classifiy again!
   classifyVideo();
-  // return add_url(label);
+  
 }
 
