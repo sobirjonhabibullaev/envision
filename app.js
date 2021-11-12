@@ -75,6 +75,7 @@ window.onload = function () {
        label = results[0].label;
 
        console.log(label);
+       add_url(label)
      } else {
        label = "...";
      }
@@ -85,19 +86,20 @@ window.onload = function () {
  }, vid.duration);
  
 
- var v_id = document.getElementById("vide");
+
+ 
  function add_url(n) {
    if (n == "Astronomy") {
-     v_id.setAttribute("src", "Astrology.ogg");
+     vid.setAttribute("src", "Astrology.ogg");
    } else if (n == "Biology") {
-     v_id.setAttribute("src", "Astrology.ogg");
-   } else if (n == "Biology") {
-     v_id.setAttribute("src", "Astrology.ogg");
-   } else if (n == "Biology") {
-     v_id.setAttribute("src", "Astrology.ogg");
-   } else if (n == "Biology") {
-     v_id.setAttribute("src", "Astrology.ogg");
+     vid.setAttribute("src", "Astrology.ogg");
+   } else if (n == "Chemistry") {
+     vid.setAttribute("src", "Astrology.ogg");
+   } else if (n == "Medicine") {
+     vid.setAttribute("src", "Astrology.ogg");
+   } else if (n == "Physics") {
+     vid.setAttribute("src", "Astrology.ogg");
    }else{
-     v_id.setAttribute("src", "#");
+     vid.setAttribute("src", "#");
    }
  }
