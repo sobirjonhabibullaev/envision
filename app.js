@@ -3,7 +3,7 @@ window.onload = function () {
   vid.duration = 1;
 } 
  
- setTimeout(() => {
+
    
   // Classifier Variable
    let classifier;
@@ -83,7 +83,7 @@ window.onload = function () {
      // Classifiy again!
      classifyVideo();
    }
- }, vid.duration);
+
  
 
 
