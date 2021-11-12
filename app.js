@@ -92,11 +92,11 @@ window.onload = function () {
    if (n == "Astronomy") {
      vid.setAttribute("src", "Astrology.ogg");
    } else if (n == "Biology") {
-     vid.setAttribute("src", "Astrology.ogg");
+     vid.setAttribute("src", "Biology.mp4");
    } else if (n == "Chemistry") {
-     vid.setAttribute("src", "Astrology.ogg");
+     vid.setAttribute("src", "Chemistry.mp4");
    } else if (n == "Medicine") {
-     vid.setAttribute("src", "Astrology.ogg");
+     vid.setAttribute("src", "Medicine.mp4");
    } else if (n == "Physics") {
      vid.setAttribute("src", "Astrology.ogg");
    }else{
