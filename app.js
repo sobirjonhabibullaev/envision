@@ -4,7 +4,7 @@ window.onload = function () {
 // Classifier Variable
 let classifier;
 // Model URL
-let imageModelURL = 'https://teachablemachine.withgoogle.com/models/lIvux57Wc/';
+// let imageModelURL = 'https://teachablemachine.withgoogle.com/models/lIvux57Wc/';
 let link = '';
 let label = '';
 // Video
@@ -16,7 +16,7 @@ let img;
 
 // Load the model first
 function preload() {
-  classifier = ml5.imageClassifier(imageModelURL + 'model.json');
+  classifier = ml5.imageClassifier('model.json');
   img = loadImage('data/logo.png');
 }
 
