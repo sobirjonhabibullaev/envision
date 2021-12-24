@@ -3,8 +3,7 @@ window.onload = function () {
 };
 // Classifier Variable
 let classifier;
-// Model URL
-// let imageModelURL = 'https://teachablemachine.withgoogle.com/models/lIvux57Wc/';
+
 let link = '';
 let label = '';
 // Video
